@@ -73,7 +73,7 @@ export default function Sidebar() {
             className={pathName === item.href ? styles.active : ''}
           >
             {/* Item link & icon item */}
-            <Link href={item.href} ref={(el) => menuItemsRef.current.push(el)}>
+            <Link onClick={item.onClick} href={item.href} ref={(el) => menuItemsRef.current.push(el)}>
               {item.icon}
             </Link>
           </li>

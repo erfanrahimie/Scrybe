@@ -8,6 +8,8 @@ import {
 } from 'react-icons/ri';
 import { ROOT_ROUTES } from './routes/root';
 import { AUTH_ROUTES } from './routes/auth';
+import { logout } from '@/actions/auth/logout';
+import { redirect } from 'next/navigation';
 
 /**
  * Sidebar menu items data
@@ -43,7 +45,11 @@ export const SIDEBAR_ITEMS = [
   },
   {
     icon: <RiLogoutCircleLine />,
-    href: AUTH_ROUTES.LOGOUT,
+    href: '',
     text: 'Logout',
+    onClick: () =>{ 
+      logout()
+      redirect('')
+    }
   },
 ];
