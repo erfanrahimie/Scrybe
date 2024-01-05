@@ -1,0 +1,89 @@
+/* Reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Site setting */
+:root {
+}
+
+.theme-core {
+  --cl-primary-light: rgb(255, 106, 133);
+  --cl-primary-base: rgb(255, 77, 109);
+  --cl-primary-main: rgb(255, 51, 102);
+  --cl-primary-dark: rgb(255, 25, 82);
+
+  --cl-error: rgb(255, 71, 87);
+  --cl-success: rgb(46, 213, 115);
+  --cl-info: rgb(30, 144, 255);
+  --cl-warning: rgb(255, 242, 0);
+
+  --cl-secondary-main: #b0d8f5;
+  --cl-secondary-base: #87cdf0;
+  --cl-secondary-light: #d5e9fa;
+  --cl-secondary-dark: #82c7eb;
+}
+
+.skin-dark {
+  --cl-border-main: var(--cl-primary-main);
+  --cl-border-dark: var(--cl-primary-dark);
+
+  --cl-link: var(--cl-primary-light);
+  --cl-link-hover: var(--cl-primary-main);
+
+  --cl-shadow-soft: rgba(0, 0, 0, 0.1);
+  --cl-shadow-hard: rgba(0, 0, 0, 0.4);
+
+  --cl-text-primary: rgb(248, 249, 250);
+  --cl-text-secondary: rgb(222, 226, 230);
+  --cl-text-tertiary: rgb(173, 181, 189);
+
+  --cl-button-text: rgb(248, 249, 250);
+  --cl-button-background: var(--cl-primary-base);
+  --cl-button-hover: var(--cl-primary-main);
+
+  --cl-input-background: rgb(39, 40, 41);
+  --cl-input-focus: rgb(50, 54, 67);
+
+  --cl-bg-alt: rgb(40, 40, 40);
+  --cl-bg-accent: rgb(30, 30, 30);
+  --cl-bg-main: rgb(20, 20, 20);
+  --cl-bg-global: rgb(0, 0, 0);
+}
+
+.skin-light {
+  --cl-border-main: var(--cl-primary-main);
+  --cl-border-secondary: var(--cl-primary-base);
+
+  --cl-link: var(--cl-primary-light);
+  --cl-link-hover: var(--cl-primary-main);
+
+  --cl-shadow-soft: rgba(0, 0, 0, 0.1);
+  --cl-shadow-hard: rgba(0, 0, 0, 0.4);
+
+  --cl-text-primary: rgb(33, 37, 41);
+  --cl-text-secondary: rgb(73, 80, 87);
+  --cl-text-tertiary: rgb(108, 117, 125);
+
+  --cl-button-text: rgb(248, 249, 250);
+  --cl-button-background: var(--cl-primary-base);
+  --cl-button-hover: var(--cl-primary-main);
+
+  --cl-input-background: rgb(255, 255, 255);
+  --cl-input-focus: rgb(206, 212, 218);
+
+  --cl-bg-alt: rgb(206, 212, 218);
+  --cl-bg-accent: rgb(222, 226, 230);
+  --cl-bg-main: rgb(238, 238, 238);
+  --cl-bg-global: rgb(247, 247, 247);
+}
+
+body {
+  background: var(--cl-bg-global);
+  height: 100vh;
+  min-width: 800px;
+  display: flex;
+  padding: 10px;
+}

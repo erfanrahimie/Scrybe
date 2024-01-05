@@ -1,0 +1,114 @@
+/* Main Profile Section */
+.profileSection {
+  padding: 25px 25px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  height: fit-content;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Container for profile image and details */
+.details {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+/* User Profile Image */
+.profileImage {
+  border-radius: 100%;
+}
+
+/* Container for user details */
+.profileDetails {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Userدame text */
+.profileUsername {
+  color: var(--cl-text-primary);
+  font-size: 1.5rem;
+}
+
+/* User Bio text */
+.profileBio {
+  font-size: 0.9rem;
+  color: var(--cl-text-secondary);
+}
+
+/* User website link */
+.profileWebsiteLink {
+  color: var(--cl-primary-light);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  width: fit-content;
+  align-items: top;
+}
+
+/* User website link > ICON */
+.profileWebsiteLink > svg {
+  margin-right: 5px;
+  width: 17px;
+  height: 17px;
+}
+
+/* User Statistics Container */
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* User Stats List */
+.profileStats {
+  align-self: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+
+/* Single user stat item */
+.profileStatsItem {
+  font-size: 1rem;
+  display: flex;
+  gap: 5px;
+  background-color: var(--cl-bg-accent);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--cl-text-secondary);
+}
+
+/* Single user stat item > ICON */
+.profileStatsItem > span {
+  font-weight: bold;
+}
+
+/* Social Links Container */
+.profileSocialLinks {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+/* Single Social Link */
+.profileSocialLinks > a {
+  display: flex;
+  gap: 10px;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: var(--cl-primary-light);
+  color: var(--cl-button-text);
+}
+
+/* Single Social Link > ICON */
+.profileSocialLinks > a > svg {
+  width: 20px;
+  height: 20px;
+}

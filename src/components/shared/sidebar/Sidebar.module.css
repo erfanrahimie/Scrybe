@@ -1,0 +1,140 @@
+/* Styles for sidebar */
+.sidebar {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--cl-bg-main);
+  border-radius: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: 5px;
+  padding: 20px 15px 20px;
+}
+
+/* Sidebar scrollbar setting */
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+  cursor: pointer;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--cl-bg-alt);
+  border-radius: 50px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cl-bg-accent);
+}
+
+/* Top section of sidebar with profile image and menu */
+.topSidebar {
+  padding: 20px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile image styles */
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px solid var(--cl-border-main);
+}
+
+/* Icon login user styles */
+.loginUser {
+  background: var(--cl-button-background);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cl-button-text);
+  transition: background-color 0.35s ease-in-out;
+}
+
+.loginUser > svg {
+  width: 25px;
+  height: 25px;
+}
+
+.loginUser:hover {
+  background: var(--cl-button-hover);
+}
+
+
+/* Menu list styles */
+.menuList {
+  list-style: none;
+  padding-top: 20px;
+}
+
+/* Individual menu items */
+.menuList > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Information text > menu items */
+.tipText {
+  position: absolute;
+  color: var(--cl-text-tertiary);
+  font-size: 1.1rem;
+  opacity: 0;
+  z-index: 2;
+  padding: 10px 12px;
+  border-radius: 10px;
+  pointer-events: none;
+  background: var(--cl-bg-accent);
+}
+
+/* Link styles inside menu */
+.menuList > li > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--cl-text-tertiary);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* Icon sizes inside links */
+.menuList > li > a > svg {
+  width: 25px;
+  height: 25px;
+}
+
+/* Active link styles */
+.active > a {
+  background-color: var(--cl-bg-accent);
+}
+
+/* Home link styles */
+.homeLink {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--cl-button-text);
+  display: flex;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: var(--cl-button-background);
+  transition: background-color 0.35s ease-in-out;
+}
+
+/* Home link styles */
+.homeLink:hover {
+  background-color: var(--cl-button-hover);
+}
+
+/* Home icon size */
+.homeLink > svg {
+  width: 25px;
+  height: 25px;
+}

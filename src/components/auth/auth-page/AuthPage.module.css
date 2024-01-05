@@ -1,0 +1,53 @@
+/* auth section styles */
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 30px 25px;
+  overflow-y: auto;
+  background: var(--cl-bg-main);
+}
+
+/* Page title style */
+.pageTitle {
+  color: var(--cl-primary-main);
+  font-size: 1.7rem;
+}
+
+/* Page discription style */
+.pageDiscription {
+  color: var(--cl-text-secondary);
+  font-size: 0.9rem;
+  padding-top: 8px;
+}
+
+/* Page signin option style */
+.signinOption {
+  margin-top: 20px;
+  border-top: 1px solid var(--cl-border-main);
+  padding: 10px 8px 0;
+}
+
+/* Page other option style */
+.otherOption {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--cl-text-secondary);
+}
+
+/* Link styles */
+.otherOption a {
+  text-decoration: none;
+  transition: color 0.3s;
+  color: var(--cl-link);
+}
+
+.otherOption a:hover {
+  color: var(--cl-link-hover);
+}
