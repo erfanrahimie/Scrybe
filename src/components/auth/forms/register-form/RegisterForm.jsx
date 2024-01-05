@@ -1,5 +1,5 @@
 'use client'
-import { FormError, FormSuccess } from '@/components/forms/message/message'
+import { FormError, FormSuccess } from '@/components/forms/message/Message'
 import { register as registerUser } from '@/actions/auth/register'
 import { resgisterSchema } from '@/security/zod/auth-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
