@@ -17,7 +17,7 @@ export const forgotPassword = async (values) => {
 
   const passwordResetToken = await generateResetPasswordToken(email)
   
-  await sendEmailResetPassword(passwordResetToken.email, passwordResetToken.token)
+  await sendEmailResetPassword(passwordResetToken.identifier, passwordResetToken.token)
 
   return { success: 'Reset password email sent!' }
 }

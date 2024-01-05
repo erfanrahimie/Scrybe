@@ -26,7 +26,7 @@ export const register = async (values) => {
 
   const verificationToken = await generateVerifyEmailToken(email)
 
-  await sendEmailVerifyEmail(verificationToken.email, verificationToken.token)
+  await sendEmailVerifyEmail(verificationToken.identifier, verificationToken.token)
 
   return { success: 'Confirmation email sent!' }
 }

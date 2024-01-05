@@ -36,7 +36,7 @@ export const login = async (values, callbackUrl) => {
   if (!existingUser.emailVerified) {
     const verificationToken = await generateVerifyEmailToken(existingUser.email)
 
-    await sendEmailVerifyEmail(verificationToken.email, verificationToken.token)
+    await sendEmailVerifyEmail(verificationToken.identifier, verificationToken.token)
 
     return { success: 'Confirmation email sent!' }
   }
@@ -68,7 +68,7 @@ export const login = async (values, callbackUrl) => {
       })
     } else {
       const twoFactorToken = await generateTwoFactorToken(existingUser.email)
-      await sendEmailTwoFactor(twoFactorToken.email, twoFactorToken.token.replace('2fa_', ''))
+      await sendEmailTwoFactor(twoFactorToken.identifier, twoFactorToken.token.replace('2fa_', ''))
 
       return { twoFactor: true }
     }
