@@ -5,6 +5,6 @@ export const emailTemplateTwoFactor = ({ email, token }) => (
     <h1>
       TwoFactor for <b>{email}</b>
     </h1>
-    <p>Your 2FA code: ${token}</p>
+    <p>Your 2FA code: {token}</p>
   </div>
 )
