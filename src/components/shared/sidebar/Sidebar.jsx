@@ -1,13 +1,87 @@
 'use client'
+import { AUTH_MENU_ITEMS, GOUST_MENU_ITEMS } from '@/constants/sidebar'
+import { RiApps2Fill, RiApps2Line } from 'react-icons/ri'
 import { ROOT_ROUTES } from '@/constants/routes/root'
-import { SIDEBAR_ITEMS } from '@/constants/sidebar'
+import { AUTH_ROUTES } from '@/constants/routes/auth'
+import { RiUserReceivedLine } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
-import { RiApps2Line } from 'react-icons/ri'
+import { useSession } from 'next-auth/react'
 import { useRef, useState } from 'react'
-import UserImage from '@/components/shared/user-profile/ProfileImage'
+import Skeleton from '@/components/Skeleton'
 import styles from './Sidebar.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 import gsap from 'gsap'
+
+/**
+ * Main Sidebar Component
+ */
+export default function Sidebar() {
+  const pathName = usePathname() // Get current pathname
+
+  return (
+    // Markup for sidebar
+    <nav className={styles.sidebar}>
+
+      {/* Show profile & sidebar menu */}
+      <SidebarContent />
+
+      {/* Home link */}
+      <Link href={ROOT_ROUTES.HOME} className={styles.homeLink}>
+        {pathName === ROOT_ROUTES.HOME ? <RiApps2Fill /> : <RiApps2Line />}
+      </Link>
+    </nav>
+  )
+}
+
+/**
+ * Displays Sidebar content
+ */
+function SidebarContent() {
+  const { status, data: session } = useSession() // Get session
+
+  // loading status session
+  if (status === 'loading')
+    return (
+      <>
+        <Skeleton borderRadius={'100%'} width={50} height={50} />
+        <Skeleton
+          className={styles.sidebarLoading}
+          borderRadius={'10px'}
+          width={41}
+          height={41}
+          count={5}
+        />
+      </>
+    )
+
+  // user unauthenticated status 
+  if (status === 'unauthenticated')
+    return (
+      <>
+        <Link className={styles.loginUser} href={AUTH_ROUTES.LOGIN}>
+          <span className={styles.loginContainer}>
+            <RiUserReceivedLine />
+          </span>
+        </Link>
+        <SidebarMenu auth={false} />
+      </>
+    )
+
+  // user authenticated return 
+  return (
+    <>
+      <Image
+        className={styles.profileImage}
+        src={session?.user?.image ? session?.user?.image : '/assets/images/profile.png'}
+        width={50}
+        height={50}
+        alt="profile-image"
+      />
+      <SidebarMenu auth={true} />
+    </>
+  )
+}
 
 /**
  * Animates element
@@ -26,7 +100,8 @@ export function animateElement(element, properties) {
 /**
  * Main Sidebar Component
  */
-export default function Sidebar() {
+export function SidebarMenu({ auth }) {
+  const sidebarItem = auth ? AUTH_MENU_ITEMS : GOUST_MENU_ITEMS
   const pathName = usePathname() // Get current pathname
   const menuItemsRef = useRef([]) // Holds animation elements
   const tipTextRef = useRef() // Info text ref
@@ -42,7 +117,7 @@ export default function Sidebar() {
     if (status === 'enter') {
       // Set selected item text and its location
       setSelectedItem({
-        text: SIDEBAR_ITEMS[index].text,
+        text: sidebarItem[index].text,
         location: menuItemsRef.current[index].getBoundingClientRect(),
       })
 
@@ -55,15 +130,11 @@ export default function Sidebar() {
   }
 
   return (
-    // Markup for sidebar
-    <nav className={styles.sidebar}>
-      {/* Profile image */}
-      <UserImage styles={styles} width={50} height={50} showLogin={true}/>
-
+    <>
       {/* Menu items list */}
       <menu className={styles.menuList}>
         {/* Loop through sidebar items */}
-        {SIDEBAR_ITEMS.map((item, index) => (
+        {sidebarItem.map((item, index) => (
           <li
             key={index}
             // Hover animations
@@ -74,16 +145,11 @@ export default function Sidebar() {
           >
             {/* Item link & icon item */}
             <Link onClick={item.onClick} href={item.href} ref={(el) => menuItemsRef.current.push(el)}>
-              {item.icon}
+              {pathName === item.href ? item.iconActive : item.icon}
             </Link>
           </li>
         ))}
       </menu>
-
-      {/* Home link */}
-      <Link href={ROOT_ROUTES.HOME} className={styles.homeLink}>
-        <RiApps2Line />
-      </Link>
 
       {/* Item tip text */}
       <div
@@ -97,6 +163,6 @@ export default function Sidebar() {
       >
         {selectedItem && selectedItem.text}
       </div>
-    </nav>
+    </>
   )
 }

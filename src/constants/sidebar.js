@@ -1,55 +1,87 @@
 import {
-  RiCustomerService2Line,
+  RiFireFill,
+  RiFireLine,
+  RiHeart3Fill,
   RiHeart3Line,
-  RiLogoutCircleLine,
+  RiMessage3Fill,
   RiMessage3Line,
+  RiQuestionAnswerFill,
+  RiQuestionAnswerLine,
+  RiSearch2Fill,
+  RiSearch2Line,
+  RiSettings4Fill,
   RiSettings4Line,
-  RiUser3Line,
-} from 'react-icons/ri';
-import { ROOT_ROUTES } from './routes/root';
-import { AUTH_ROUTES } from './routes/auth';
-import { logout } from '@/actions/auth/logout';
-import { redirect } from 'next/navigation';
+} from 'react-icons/ri'
+import { ROOT_ROUTES } from './routes/root'
 
 /**
- * Sidebar menu items data
+ * Sidebar menu items data with -> Auth User
  * constant
  * type {Array}
  */
-export const SIDEBAR_ITEMS = [
+export const AUTH_MENU_ITEMS = [
   // Array of menu items
   {
-    icon: <RiUser3Line />,
-    href: ROOT_ROUTES.HOME,
-    text: 'Profile',
-  },
-  {
     icon: <RiMessage3Line />,
+    iconActive: <RiMessage3Fill />,
     href: ROOT_ROUTES.HOME,
     text: 'Messages',
   },
   {
     icon: <RiHeart3Line />,
-    href: ROOT_ROUTES.HOME,
+    iconActive: <RiHeart3Fill />,
+    href: ROOT_ROUTES.ABOUT,
     text: 'Likes',
   },
   {
+    icon: <RiSearch2Line />,
+    iconActive: <RiSearch2Fill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Explore',
+  },
+  {
+    icon: <RiFireLine />,
+    iconActive: <RiFireFill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Trending',
+  },
+  {
+    icon: <RiQuestionAnswerLine />,
+    iconActive: <RiQuestionAnswerFill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Help & Support',
+  },
+  {
     icon: <RiSettings4Line />,
-    href: ROOT_ROUTES.HOME,
+    iconActive: <RiSettings4Fill />,
+    href: ROOT_ROUTES.ABOUT,
     text: 'Settings',
   },
+]
+
+/**
+ * Sidebar menu items data with -> Goust User
+ * constant
+ * type {Array}
+ */
+export const GOUST_MENU_ITEMS = [
+  // Array of menu items
   {
-    icon: <RiCustomerService2Line />,
-    href: ROOT_ROUTES.HOME,
-    text: 'Support',
+    icon: <RiSearch2Line />,
+    iconActive: <RiSearch2Fill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Explore',
   },
   {
-    icon: <RiLogoutCircleLine />,
-    href: '',
-    text: 'Logout',
-    onClick: () =>{ 
-      logout()
-      redirect('')
-    }
+    icon: <RiFireLine />,
+    iconActive: <RiFireFill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Trending',
   },
-];
+  {
+    icon: <RiQuestionAnswerLine />,
+    iconActive: <RiQuestionAnswerFill />,
+    href: ROOT_ROUTES.ABOUT,
+    text: 'Help & Support',
+  },
+]

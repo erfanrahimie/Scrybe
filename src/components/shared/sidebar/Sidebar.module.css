@@ -47,17 +47,20 @@
 /* Icon login user styles */
 .loginUser {
   background: var(--cl-button-background);
-  width: 50px;
-  height: 50px;
   border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--cl-button-text);
   transition: background-color 0.35s ease-in-out;
 }
 
-.loginUser > svg {
+.loginContainer{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer > svg {
   width: 25px;
   height: 25px;
 }
@@ -137,4 +140,10 @@
 .homeLink > svg {
   width: 25px;
   height: 25px;
+}
+
+
+/* Sidebar loading */
+.sidebarLoading {
+  margin-top: 20px;
 }
