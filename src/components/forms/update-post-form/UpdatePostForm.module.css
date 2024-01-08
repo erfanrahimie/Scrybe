@@ -1,0 +1,111 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-items: center;
+}
+
+.pageTitle {
+  color: var(--cl-primary-base);
+  font-size: 2rem;
+  margin-top: 60px;
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Base input styles */
+.postForm > input {
+  margin-bottom: 10px;
+  color: var(--cl-text-secondary);
+  background-color: var(--cl-input-background);
+  border-radius: 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  resize: vertical;
+  z-index: 1;
+}
+
+.postForm > textarea {
+  margin-bottom: 10px;
+  color: var(--cl-text-secondary);
+  background-color: var(--cl-input-background);
+  border-radius: 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  resize: vertical;
+  z-index: 1;
+  height: 300px;
+}
+
+/* main scrollbar setting */
+.postForm > textarea::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+.postForm > textarea::-webkit-scrollbar-thumb {
+  background-color: var(--cl-primary-light);
+  border-radius: 50px;
+}
+
+.postForm > textarea::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cl-bg-accent);
+}
+
+
+/* Focus style */
+.postForm > input:focus {
+  box-shadow: inset 0px 0px 0px 2px var(--cl-primary-base);
+}
+
+/* Error message boxes */
+.formError {
+  font-size: 0.8rem;
+  background-color: var(--cl-primary-base);
+  color: var(--cl-button-text);
+  padding: 15px 10px 6px;
+  border-radius: 0px 0px 10px 10px;
+  margin: -20px 0 10px;
+}
+
+/* Server error style */
+.serverError {
+  font-size: 0.8rem;
+  background-color: var(--cl-primary-base);
+  color: var(--cl-button-text);
+  padding: 6px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Submit button */
+.submitButton {
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--cl-button-text);
+  background-color: var(--cl-button-background);
+  border-radius: 10px;
+  border: none;
+  padding: 12px 15px;
+  transition: background 0.3s;
+}
+
+/* Submit button -> hover */
+.submitButton:hover {
+  background-color: var(--cl-button-hover);
+}
+
+/* Submit button -> disabled */
+.submitButton:disabled {
+  opacity: 0.6;
+}

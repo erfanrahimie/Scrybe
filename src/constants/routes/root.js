@@ -6,6 +6,7 @@
 export const ROOT_ROUTES = {
   HOME: '/',
   ABOUT: '/about',
+  SETTING: '/setting',
 
   ARTICLE: {
     INDEX: '/articles',

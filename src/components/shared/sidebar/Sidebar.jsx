@@ -71,13 +71,15 @@ function SidebarContent() {
   // user authenticated return 
   return (
     <>
-      <Image
-        className={styles.profileImage}
-        src={session?.user?.image ? session?.user?.image : '/assets/images/profile.png'}
-        width={50}
-        height={50}
-        alt="profile-image"
-      />
+      <Link href={`${'/profile'}/${session?.user?.username}`}>
+        <Image
+          className={styles.profileImage}
+          src={session?.user?.image ? session?.user?.image : '/assets/images/profile.png'}
+          width={50}
+          height={50}
+          alt="profile-image"
+        />
+      </Link>
       <SidebarMenu auth={true} />
     </>
   )

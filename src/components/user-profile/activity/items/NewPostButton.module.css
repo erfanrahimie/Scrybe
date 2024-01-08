@@ -1,0 +1,14 @@
+.createPost {
+  font-size: 1rem;
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.createPost > svg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}

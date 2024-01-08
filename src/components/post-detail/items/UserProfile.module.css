@@ -1,0 +1,93 @@
+/* Main Profile container */
+.container {
+  margin: -40px 0px 50px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  width: 90%;
+  justify-content: space-between;
+  gap: 20px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--cl-bg-accent);
+}
+
+/* Container for profile image and details */
+.details {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+/* User Profile Image */
+.profileImage {
+  border-radius: 100%;
+}
+
+/* Userدame text */
+.profileUsername {
+  color: var(--cl-text-primary);
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+/* User Stats List */
+.stats {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+}
+
+.createPost {
+  font-size: 1rem;
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.createPost > svg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+.likeButton {
+  font-size: 1rem;
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.likeButton > svg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+
+.followButton {
+  font-size: 1rem;
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.unFollowButton {
+  background-color: var(--cl-bg-alt);
+  color: var(--cl-text-secondary);
+  font-size: 1rem;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}

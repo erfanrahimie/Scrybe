@@ -2,7 +2,7 @@ import { getTwoFactorConfirmationByUserId } from '@/data/two-factor-confirmation
 import { AUTH_ROUTES } from '@/constants/routes/auth'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import { getAccountByUserId } from '@/data/account'
-import { getUserById } from '@/data/user'
+import { getUserById, getUserByUsername } from '@/data/user'
 import authConfig from '@/security/auth.config'
 import NextAuth from 'next-auth'
 import prisma from '@/db/client'
@@ -21,10 +21,35 @@ export const {
 
   events: {
     async linkAccount({ user }) {
-      await prisma.user.update({
-        where: { id: user.id },
-        data: { emailVerified: new Date() },
-      })
+      if (!user.username && user.email) {
+        const email = user.email
+        const emailPrefix = email.split('@')[0]
+
+        let username = emailPrefix
+        let exists
+
+        do {
+          // Generate random number
+          const randomStr = await crypto.randomBytes(6).toString('hex')
+
+          username = `${emailPrefix}_${randomStr}`
+
+          // Check if username exists
+          exists = await getUserByUsername(username)
+
+        } while (exists)
+
+        // Save generated username
+        await prisma.user.update({
+          where: {
+            id: user.id,
+          },
+          data: {
+            username,
+            data: { emailVerified: new Date() },
+          },
+        })
+      }
     },
   },
 
@@ -67,6 +92,7 @@ export const {
       if (session.user) {
         session.user.name = token.name
         session.user.email = token.email
+        session.user.username = token.username
         session.user.isOAuth = token.isOAuth
       }
 
@@ -84,6 +110,7 @@ export const {
       token.isOAuth = !!existingAccount
       token.name = existingUser.name
       token.email = existingUser.email
+      token.username = existingUser.username
       token.role = existingUser.role
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled
 

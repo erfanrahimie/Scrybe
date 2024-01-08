@@ -37,6 +37,8 @@ export default function RegisterForm() {
 
   return (
     <form className={styles.authForm} onSubmit={handleSubmit(onSubmit)}>
+      <input disabled={isSubmitting} type="text" placeholder="Username" {...register('username')} />
+      {errors.username && <p className={styles.formError}>{errors.username.message}</p>}
       <input disabled={isSubmitting} type="text" placeholder="Email" {...register('email')} />
       {errors.email && <p className={styles.formError}>{errors.email.message}</p>}
       <input disabled={isSubmitting} type="password" placeholder="Password (6+ characters)" {...register('password')} />

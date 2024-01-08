@@ -1,5 +1,5 @@
-/* Main Profile Section */
-.profileSection {
+/* Main Profile container */
+.container {
   padding: 25px 25px;
   width: 100%;
   justify-content: space-between;
@@ -36,12 +36,14 @@
 
 /* User Bio text */
 .profileBio {
+  margin-top: 10px;
   font-size: 0.9rem;
   color: var(--cl-text-secondary);
 }
 
 /* User website link */
 .profileWebsiteLink {
+  margin-top: 10px;
   color: var(--cl-primary-light);
   font-size: 0.9rem;
   font-weight: bold;
@@ -80,7 +82,7 @@
   display: flex;
   gap: 5px;
   background-color: var(--cl-bg-accent);
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 10px;
   color: var(--cl-text-secondary);
 }

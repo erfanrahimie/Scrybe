@@ -1,10 +1,10 @@
 import {
+  RiChat3Fill,
+  RiChat3Line,
   RiFireFill,
   RiFireLine,
   RiHeart3Fill,
   RiHeart3Line,
-  RiMessage3Fill,
-  RiMessage3Line,
   RiQuestionAnswerFill,
   RiQuestionAnswerLine,
   RiSearch2Fill,
@@ -22,9 +22,9 @@ import { ROOT_ROUTES } from './routes/root'
 export const AUTH_MENU_ITEMS = [
   // Array of menu items
   {
-    icon: <RiMessage3Line />,
-    iconActive: <RiMessage3Fill />,
-    href: ROOT_ROUTES.HOME,
+    icon: <RiChat3Line />,
+    iconActive: <RiChat3Fill />,
+    href: ROOT_ROUTES.ABOUT,
     text: 'Messages',
   },
   {
@@ -54,7 +54,7 @@ export const AUTH_MENU_ITEMS = [
   {
     icon: <RiSettings4Line />,
     iconActive: <RiSettings4Fill />,
-    href: ROOT_ROUTES.ABOUT,
+    href: ROOT_ROUTES.SETTING,
     text: 'Settings',
   },
 ]

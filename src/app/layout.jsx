@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const darkTheme = true
+  const darkTheme = false
   const session = await auth()
   return (
     <SessionProvider session={session}>

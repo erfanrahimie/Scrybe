@@ -2,7 +2,7 @@
 .formSuccess,
 .formInfo,
 .formWarning {
-  color: var(--cl-text-primary);
+  color: var(--cl-button-text);
   display: flex;
   padding: 10px;
   align-items: center;

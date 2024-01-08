@@ -1,0 +1,104 @@
+.noPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 85px 0px 85px;
+}
+
+.noPostIcon{
+  color: var(--cl-bg-alt);
+  width: 100px;
+  height: 100px;
+}
+
+.noPostTitle{
+  color: var(--cl-bg-alt);
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.postLink {
+  text-decoration: none;
+}
+
+.post {
+  position: relative;
+  width: 100%;
+  background-color: var(--cl-bg-accent);
+  border-radius: 15px;
+}
+
+.postImage {
+  position: relative !important;
+  height: 190px !important;;
+  display: flex !important;
+  border-radius: 15px;
+  position: relative;  
+  color: var(--cl-text-tertiary);
+  background-color: var(--cl-shadow-soft);
+}
+.postDescription {
+  padding: 10px 10px 20px;
+}
+
+
+.postTitle{
+  height: 50px;
+  font-weight: normal;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+  text-justify: kashida;
+  color: var(--cl-text-secondary);
+  font-size: 1rem;
+}
+
+.postStatus{
+  display: flex;
+  
+}
+
+.postPublish {
+  align-items: center;
+  z-index: 1;
+  width: fit-content;
+  display: flex;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  border-radius: 0px 15px 0px 15px;
+  color: var(--cl-primary-base);
+  background-color: var(--cl-bg-alt);
+}
+
+.postPublish > svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+}
+
+.postLike {
+  align-items: center;
+  width: fit-content;
+  display: flex;
+  margin-left: -10px;
+  padding: 10px 15px 10px 20px;
+  font-size: 0.8rem;
+  border-radius: 0px 15px 0px 15px;
+  color: var(--cl-button-text);
+  background-color: var(--cl-primary-base);
+}
+
+.postLike > svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+}

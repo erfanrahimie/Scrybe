@@ -1,0 +1,63 @@
+/* Main Activity continer */
+.container {
+  padding: 25px 25px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.topBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.menuItem{
+  font-size: 1rem;
+  background-color: var(--cl-bg-accent);
+  color: var(--cl-text-tertiary);
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.active{
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  cursor: default;
+}
+
+.userFeatures{
+  display: flex;
+  gap: 10px;
+}
+
+.followButton {
+  font-size: 1rem;
+  background-color: var(--cl-button-background);
+  color: var(--cl-button-text);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.unFollowButton {
+  background-color: var(--cl-bg-accent);
+  color: var(--cl-text-tertiary);
+  font-size: 1rem;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
