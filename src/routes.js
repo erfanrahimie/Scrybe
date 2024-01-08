@@ -9,6 +9,8 @@ import { ROOT_ROUTES } from "./constants/routes/root";
 export const publicRoutes = [
   "/",
   AUTH_ROUTES.VERIFY_EMAIL,
+  '/profile',
+  '/post/'
 ];
 
 /**

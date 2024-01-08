@@ -7,10 +7,13 @@ import Reviews from './items/Reviews'
 import Posts from './items/Posts'
 import { userFollow, userUnfollow } from '@/actions/user/user-follow'
 import toast from 'react-hot-toast'
+import { logout } from '@/actions/auth/logout'
+import { useRouter } from 'next/navigation'
 
 export default function Activity({ username, posts, user }) {
   const { status, data: session } = useSession() // Get session
   const [following, setFollowing] = useState(user.followers.includes(session.user.id))
+  const router = useRouter()
 
   // handle Follow > Follow & Unfollow
   const handleFollow = async () => {
@@ -29,6 +32,12 @@ export default function Activity({ username, posts, user }) {
         if (data?.success) setFollowing(true)
       })
       .catch(() => toast.error('Something went wrong'))
+    
+  }
+  
+  const logouHandel = async () => {
+    await logout()
+    return router.push('/auth/login')
   }
 
   // const user = currentUser()
@@ -55,7 +64,12 @@ export default function Activity({ username, posts, user }) {
         </menu>
         <div className={styles.userFeatures}>
           {isOwner ? (
-            <NewPostButton />
+            <>
+              <NewPostButton />
+              <button className={styles.logout} onClick={logouHandel}>
+                Logout
+              </button>
+            </>
           ) : (
             <button
               className={following ? styles.unFollowButton : styles.followButton}

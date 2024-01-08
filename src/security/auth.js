@@ -6,6 +6,7 @@ import { getUserById, getUserByUsername } from '@/data/user'
 import authConfig from '@/security/auth.config'
 import NextAuth from 'next-auth'
 import prisma from '@/db/client'
+import crypto from 'crypto'
 
 export const {
   handlers: { GET, POST },
@@ -46,7 +47,7 @@ export const {
           },
           data: {
             username,
-            data: { emailVerified: new Date() },
+            emailVerified: new Date()
           },
         })
       }
